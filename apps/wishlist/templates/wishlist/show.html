@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+          {% for product in products %}
+      <title>{{product.name}}</title>
+    </head>
+  <body>
+    <h1>{{product.name}} Profile</h1>
+      <h3>Name: {{product.name}}<h3>
+    <h3>Email: aasdf@asdf.com<h3>
+</div>
+
+</div>
+
+  {% endfor %}
+  </div>
+  </div>
+
+  <form class="" action="{% url 'loginreg:logout' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Logout">
+  </form>
+  <a href="{% url 'wishlist:index' %}"><input type="button" name="Home" value="Home"></a>
+
+  </body>
+</html>

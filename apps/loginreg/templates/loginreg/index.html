@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Friends</title>
+  </head>
+  <body>
+
+<h1>Welcome!</h1>
+
+
+  <form action="{% url 'loginreg:create' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="First Name">
+    <input type="text" name="username" placeholder="Alias">
+    <input type="text" placeholder="Email">
+    <input type="password" name="password" placeholder="Password">
+    <input type="password" name="password_confirm" placeholder="Confirm Password">
+    <input type="date" name="hire_date" placeholder="Enter your birthday">
+    <input type="submit" value="Create account">
+  </form>
+
+  {% if messages %}
+    <ul>
+    {% for message in messages %}
+      <li>{{message}}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  <h1>Login</h1>
+
+    <form class="" action="/login" method="post">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="Enter your username ">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" value="Login">
+    </form>
+
+  </body>
+</html>
